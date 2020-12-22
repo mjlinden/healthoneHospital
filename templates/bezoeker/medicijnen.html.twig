@@ -1,0 +1,53 @@
+{% extends 'bezoeker.html.twig' %}
+{% block menu %}
+    <li class="nav-item"><a class="nav-link" href="{{ path('homepage') }}">home</a></li>
+    <li class="nav-item active"><a class="nav-link" href="{{ path('medicijnen') }}">medicijnen</a></li>
+    <li class="nav-item"><a class="nav-link" href="#">contact</a></li>
+{% endblock %}
+{% block content %}
+    <section >
+        <article>
+            <h3>Er zijn {{ medicijnen|length }} medicijnen </h3>
+            <table class="table" style="table-layout: fixed">
+                <caption>Dit zijn alle beschikbare medicijnen</caption>
+                <thead>
+                <tr>
+                    <td>naam</td>
+                    <td>werking</td>
+                    <td>bijwerking</td>
+                    <td>prijs</td>
+                    <td>verzekerd</td>
+                </tr>
+                </thead>
+                <tbody>
+                {% for medicijn in medicijnen %}
+                    <tr>
+                        <td>
+                            {{ medicijn.naam}}
+                        </td>
+                        <td>
+                            {{ medicijn.werking}}
+                        </td>
+
+                        <td>
+                            {{ medicijn.bijwerking}}
+                        </td>
+                        <td>
+                            &euro;{{ medicijn.kosten}}
+                        </td>
+                        <td>
+                            {% if medicijn.verzekerd==true %}
+                                verzekerd
+                            {% else  %}
+                                niet verzekerd
+                            {% endif %}
+                        </td>
+
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+        </article>
+    </section>
+{% endblock %}
