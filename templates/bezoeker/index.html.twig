@@ -1,5 +1,4 @@
-{% extends 'bezoeker.html.twig' %}
-
+{% extends 'default.html.twig' %}
 
 {% block menu %}
     <li class="nav-item active"><a class="nav-link" href="{{ path('homepage') }}">home</a></li>
@@ -7,6 +6,10 @@
 
 
     <li class="nav-item"><a class="nav-link" href="#">contact</a></li>
+{% endblock %}
+
+{% block menu_right %}
+    <li class="nav-item "><a class="nav-link" href="{{ path('app_login') }}">inloggen</a></li>
 {% endblock %}
 
 {% block content %}
