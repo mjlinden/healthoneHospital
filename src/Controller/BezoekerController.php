@@ -25,6 +25,7 @@ class BezoekerController extends AbstractController
 
         return $this->render('bezoeker/index.html.twig');
     }
+
     /**
      * @Route("/medicijnen", name="medicijnen")
      */

@@ -1,0 +1,81 @@
+{% extends 'default.html.twig' %}
+
+{% block menu %}
+    <li class="nav-item"><a class="nav-link" href="{{ path('medewerker_homepage') }}">home</a></li>
+    <li class="nav-item active"><a class="nav-link" href="{{ path('medewerker_medicijnen') }}">medicijnen</a></li>
+    <li class="nav-item"><a class="nav-link" href="#">contact</a></li>
+{% endblock %}
+
+{% block menu_right %}
+    <li class="nav-item "><a class="nav-link" href="{{ path('app_logout') }}">uitloggen</a></li>
+{% endblock %}
+
+{% block content %}
+    <section >
+        <article>
+            <h3>Er zijn {{ medicijnen|length }} medicijnen </h3>
+            <table class="table" style="table-layout: fixed">
+                <caption>Dit zijn alle beschikbare medicijnen</caption>
+                <thead>
+                <tr>
+                    <td>naam</td>
+                    <td>werking</td>
+                    <td>bijwerking</td>
+                    <td>prijs</td>
+                    <td>verzekerd</td>
+                    <td>bewerken</td>
+                    <td>verwijderen</td>
+                </tr>
+                </thead>
+                <tbody>
+                {% for medicijn in medicijnen %}
+                    <tr>
+                        <td>
+                            {{ medicijn.naam}}
+                        </td>
+                        <td>
+                            {{ medicijn.werking}}
+                        </td>
+
+                        <td>
+                            {{ medicijn.bijwerking}}
+                        </td>
+                        <td>
+                            &euro;{{ medicijn.kosten}}
+                        </td>
+                        <td>
+                            {% if medicijn.verzekerd==true %}
+                                verzekerd
+                            {% else  %}
+                                niet verzekerd
+                            {% endif %}
+                        </td>
+                        <td title="bewerk de gegevens van deze medicijn">
+
+
+                            <a href="{{ path('update_medicijn', {'id':medicijn.id}) }}" >
+                                <span class="fas fa-edit" style="color:red"></span>
+                            </a>
+                        </td>
+                        <td title="verwijder dit medicijn is definitief">
+                            <a href="{{ path('delete_medicijn', {'id':medicijn.id}) }}" >
+                                <span class="fas fa-minus" style="color:red"></span>
+                            </a>
+                        </td>
+
+                    </tr>
+                {% endfor %}
+                <tr>
+                    <td colspan="6">
+                        <a href="{{ path('add_medicijn') }}">
+                            <span class="fas fa-plus" style="color:red"></span>
+                        </a>
+                    </td>
+
+                </tr>
+                </tbody>
+            </table>
+
+        </article>
+    </section>
+{% endblock %}
