@@ -34,11 +34,11 @@
                             {{ medicijn.naam}}
                         </td>
                         <td>
-                            {{ medicijn.werking}}
+                            {{ medicijn.werking|length>50 ? medicijn.werking|slice(0,50) ~ '...': medicijn.werking}}
                         </td>
 
                         <td>
-                            {{ medicijn.bijwerking}}
+                            {{ medicijn.bijwerking|length>50 ? medicijn.bijwerking|slice(0,50) ~ '...': medicijn.bijwerking}}
                         </td>
                         <td>
                             &euro;{{ medicijn.kosten}}

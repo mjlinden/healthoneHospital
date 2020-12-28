@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="779e3635-30d0-43d4-a7ab-1181e490c180" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Controller/MedewerkerController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/medewerker/index.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/medewerker/medicijnen.html.twig" afterDir="false" />
+    <list default="true" id="779e3635-30d0-43d4-a7ab-1181e490c180" name="Default Changelist" comment="Medewrker kan inloggen">
+      <change afterPath="$PROJECT_DIR$/templates/medewerker/edit_medicijn.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/BezoekerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BezoekerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/translation.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/translation.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/MedewerkerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MedewerkerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/medewerker/medicijnen.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medewerker/medicijnen.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,8 +168,16 @@
       <updated>1608628943485</updated>
       <workItem from="1608628944600" duration="813000" />
       <workItem from="1608629778320" duration="15992000" />
-      <workItem from="1609147167648" duration="4442000" />
+      <workItem from="1609147167648" duration="7974000" />
     </task>
+    <task id="LOCAL-00001" summary="Medewrker kan inloggen">
+      <created>1609152028104</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1609152028104</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,6 +194,10 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Medewrker kan inloggen" />
+    <option name="LAST_COMMIT_MESSAGE" value="Medewrker kan inloggen" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
