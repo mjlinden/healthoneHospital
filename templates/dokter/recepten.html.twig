@@ -1,0 +1,70 @@
+{% extends 'default.html.twig' %}
+
+{% block menu %}
+    <li class="nav-item"><a class="nav-link" href="{{ path('dokter_homepage') }}">home</a></li>
+    <li class="nav-item active"><a class="nav-link" href="{{ path('dokter_recepten') }}">recepten</a></li>
+    <li class="nav-item"><a class="nav-link" href="#">contact</a></li>
+{% endblock %}
+
+{% block menu_right %}
+    <li class="nav-item "><a class="nav-link" href="{{ path('app_logout') }}">uitloggen</a></li>
+{% endblock %}
+
+{% block content %}
+    <section >
+        <article>
+            <h3>Er zijn {{ recepten|length }} recepten </h3>
+            <table class="table" style="table-layout: fixed">
+                <caption>Dit zijn alle uitgeschreven recepten</caption>
+                <thead>
+                <tr>
+                    <td>naam</td>
+                    <td>datum</td>
+                    <td>periode</td>
+                    <td>prijs</td>
+                    <td>verzekerd</td>
+
+                </tr>
+                </thead>
+                <tbody>
+                {% for recept in recepten %}
+                    <tr>
+                        <td>
+                            {{ recept.medicijn.naam}}
+                        </td>
+                        <td>
+                            {{ recept.datum|date('d-m-Y')}}
+                        </td>
+
+                        <td>
+                            {{recept.periode}}
+                        </td>
+                        <td>
+                            &euro;{{ recept.medicijn.kosten}}
+                        </td>
+                        <td>
+                            {% if recept.medicijn.verzekerd==true %}
+                                verzekerd
+                            {% else  %}
+                                niet verzekerd
+                            {% endif %}
+                        </td>
+
+
+
+                    </tr>
+                {% endfor %}
+                <tr>
+                    <td colspan="6">
+                        <a href="{{ path('add_recept') }}">
+                            <span class="fas fa-plus" style="color:red"></span>
+                        </a>
+                    </td>
+
+                </tr>
+                </tbody>
+            </table>
+
+        </article>
+    </section>
+{% endblock %}

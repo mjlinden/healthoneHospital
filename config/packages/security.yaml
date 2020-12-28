@@ -37,3 +37,4 @@ security:
         # - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
         - { path: ^/medewerker, roles: ROLE_MEDEWERKER }
+        - { path: ^/dokter, roles: ROLE_DOKTER }

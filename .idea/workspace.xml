@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="779e3635-30d0-43d4-a7ab-1181e490c180" name="Default Changelist" comment="Medewrker kan inloggen">
-      <change afterPath="$PROJECT_DIR$/templates/medewerker/edit_medicijn.html.twig" afterDir="false" />
+    <list default="true" id="779e3635-30d0-43d4-a7ab-1181e490c180" name="Default Changelist" comment="Medewerker kan medicijnen CRUD nu met sql dump">
+      <change afterPath="$PROJECT_DIR$/src/Controller/DokterController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/dokter/add_recept.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/dokter/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/dokter/recepten.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/translation.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/translation.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/MedewerkerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MedewerkerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/medewerker/medicijnen.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medewerker/medicijnen.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/healthone.sql" beforeDir="false" afterPath="$PROJECT_DIR$/healthone.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Medicijn.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Medicijn.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/bezoeker/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bezoeker/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,18 +145,18 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/medewerker" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/dokter" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="Symfony2.SettingsForm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\femke\PhpstormProjects\healthone\templates\dokter" />
       <recent name="C:\Users\femke\PhpstormProjects\healthone\templates\medewerker" />
       <recent name="C:\Users\femke\PhpstormProjects\healthone\templates\bezoeker" />
       <recent name="C:\Users\femke\PhpstormProjects\healthone\public" />
       <recent name="C:\Users\femke\PhpstormProjects\healthone\public\css" />
-      <recent name="C:\Users\femke\PhpstormProjects\healthone\public\js" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\femke\PhpstormProjects\healthone\public" />
@@ -168,7 +172,7 @@
       <updated>1608628943485</updated>
       <workItem from="1608628944600" duration="813000" />
       <workItem from="1608629778320" duration="15992000" />
-      <workItem from="1609147167648" duration="7974000" />
+      <workItem from="1609147167648" duration="12153000" />
     </task>
     <task id="LOCAL-00001" summary="Medewrker kan inloggen">
       <created>1609152028104</created>
@@ -177,7 +181,21 @@
       <option name="project" value="LOCAL" />
       <updated>1609152028104</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Medewerker kan medicijnen CRUD">
+      <created>1609155405836</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1609155405836</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Medewerker kan medicijnen CRUD nu met sql dump">
+      <created>1609155581269</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1609155581269</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -197,7 +215,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Medewrker kan inloggen" />
-    <option name="LAST_COMMIT_MESSAGE" value="Medewrker kan inloggen" />
+    <MESSAGE value="Medewerker kan medicijnen CRUD" />
+    <MESSAGE value="Medewerker kan medicijnen CRUD nu met sql dump" />
+    <option name="LAST_COMMIT_MESSAGE" value="Medewerker kan medicijnen CRUD nu met sql dump" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

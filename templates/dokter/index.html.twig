@@ -1,0 +1,22 @@
+{% extends 'default.html.twig' %}
+
+{% block menu %}
+    <li class="nav-item active"><a class="nav-link" href="{{ path('dokter_homepage') }}">home</a></li>
+    <li class="nav-item"><a class="nav-link" href="{{ path('dokter_recepten') }}">recepten</a></li>
+
+
+    <li class="nav-item"><a class="nav-link" href="#">contact</a></li>
+{% endblock %}
+
+{% block menu_right %}
+    <li class="nav-item "><a class="nav-link" href="{{ path('app_logout') }}">uitloggen</a></li>
+{% endblock %}
+
+{% block content %}
+
+    <h4>HealthOne Medical Website</h4>
+
+    Welkom je bent nu ingelogd als dokter. Je kan de recepten uitschrijven.
+
+
+{% endblock %}

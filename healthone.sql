@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 28 dec 2020 om 12:37
+-- Gegenereerd op: 28 dec 2020 om 15:01
 -- Serverversie: 10.4.14-MariaDB
 -- PHP-versie: 7.2.34
 
@@ -42,7 +42,8 @@ CREATE TABLE `doctrine_migration_versions` (
 INSERT INTO `doctrine_migration_versions` (`version`, `executed_at`, `execution_time`) VALUES
 ('DoctrineMigrations\\Version20201222130453', '2020-12-22 14:05:16', 62),
 ('DoctrineMigrations\\Version20201222133824', '2020-12-22 14:38:47', 62),
-('DoctrineMigrations\\Version20201222134100', '2020-12-22 14:41:10', 58);
+('DoctrineMigrations\\Version20201222134100', '2020-12-22 14:41:10', 58),
+('DoctrineMigrations\\Version20201228131410', '2020-12-28 14:14:29', 189);
 
 -- --------------------------------------------------------
 
@@ -71,6 +72,29 @@ INSERT INTO `medicijn` (`id`, `naam`, `werking`, `bijwerking`, `kosten`, `verzek
 -- --------------------------------------------------------
 
 --
+-- Tabelstructuur voor tabel `recept`
+--
+
+CREATE TABLE `recept` (
+  `id` int(11) NOT NULL,
+  `medicijn_id` int(11) NOT NULL,
+  `datum` date NOT NULL,
+  `periode` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `recept`
+--
+
+INSERT INTO `recept` (`id`, `medicijn_id`, `datum`, `periode`) VALUES
+(1, 1, '2016-07-05', 'voor 1 week, 3 maal daags'),
+(2, 2, '2020-12-28', 'voor 1 week, 3 maal daags'),
+(3, 3, '2021-01-10', 'voor 1 week, 3 maal daags'),
+(4, 1, '2021-01-01', 'voor 1 week, 3 maal daags');
+
+-- --------------------------------------------------------
+
+--
 -- Tabelstructuur voor tabel `user`
 --
 
@@ -87,7 +111,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `roles`, `password`, `name`) VALUES
-(1, 'medewerker1', '[\"ROLE_MEDEWERKER\"]', '$argon2i$v=19$m=65536,t=4,p=1$UUJZTHBHY0Z6YTB0YlBDdw$a3fAA9sVWZ5B4zisMjA83auGmCSV5MLK7jEMSaerDfs', 'Maaike van der Poel');
+(1, 'medewerker1', '[\"ROLE_MEDEWERKER\"]', '$argon2i$v=19$m=65536,t=4,p=1$UUJZTHBHY0Z6YTB0YlBDdw$a3fAA9sVWZ5B4zisMjA83auGmCSV5MLK7jEMSaerDfs', 'Maaike van der Poel'),
+(2, 'dokter1', '[\"ROLE_DOKTER\"]', '$argon2i$v=19$m=65536,t=4,p=1$UUJZTHBHY0Z6YTB0YlBDdw$a3fAA9sVWZ5B4zisMjA83auGmCSV5MLK7jEMSaerDfs', 'Flip de Winter');
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -104,6 +129,13 @@ ALTER TABLE `doctrine_migration_versions`
 --
 ALTER TABLE `medicijn`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexen voor tabel `recept`
+--
+ALTER TABLE `recept`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `IDX_B92268A1DFC35CB` (`medicijn_id`);
 
 --
 -- Indexen voor tabel `user`
@@ -123,10 +155,26 @@ ALTER TABLE `medicijn`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT voor een tabel `recept`
+--
+ALTER TABLE `recept`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT voor een tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- Beperkingen voor geëxporteerde tabellen
+--
+
+--
+-- Beperkingen voor tabel `recept`
+--
+ALTER TABLE `recept`
+  ADD CONSTRAINT `FK_B92268A1DFC35CB` FOREIGN KEY (`medicijn_id`) REFERENCES `medicijn` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
